@@ -4,6 +4,7 @@ import Main from "../../Layout/Main/Main";
 import Blog from "../../Pages/Blog/Blog";
 import Courses from "../../Pages/Courses/Courses";
 import Faq from "../../Pages/Faq/Faq";
+import TutorialDetails from "../../Pages/TutorialDetails/TutorialDetails";
 
 export const route= createBrowserRouter([
     {
@@ -27,6 +28,11 @@ export const route= createBrowserRouter([
             {
                 path:'faq',
                 element: <Faq></Faq>
+            },
+            {
+                path:'tutorial/:id',
+                element: <TutorialDetails></TutorialDetails>,
+                loader:({params}) => fetch(`http://localhost:5000/tutorial/${params.id}`)
             }
         ]
     },
