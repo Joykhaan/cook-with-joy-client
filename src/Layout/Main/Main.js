@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 const Main = () => {
     return (
         <div>
-            <h2>this is main page</h2>
+            <h2>this is main pageeeee</h2>
             <Outlet></Outlet>
         </div>
     );
