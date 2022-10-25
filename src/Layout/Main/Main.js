@@ -1,11 +1,19 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Navbar from '../../Components/Shared/Navbar/Navbar';
+import Sidebar from '../../Components/Shared/Sidebar/Sidebar';
 
 const Main = () => {
     return (
         <div>
-            <h2>this is main pageeeee</h2>
-            <Outlet></Outlet>
+            <Navbar></Navbar>
+            <div className='grid grid-cols-4 gap-2'>
+                <div className='col-span-1 bg-gray-200 py-10'> <Sidebar></Sidebar> </div>
+                <div className='col-span-3 bg-green-500 py-10'>
+                    <Outlet></Outlet>
+                </div>
+            </div>
+            
         </div>
     );
 };
