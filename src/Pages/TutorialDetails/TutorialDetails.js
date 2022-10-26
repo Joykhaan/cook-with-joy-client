@@ -23,7 +23,7 @@ const TutorialDetails = () => {
                         <p>{tutdetails.details}</p></div>
                         
                         <div className="card-actions justify-end">
-                            <button className="btn btn-outline btn-secondary"> <Link to={`/tutorial/${tutdetails._id}/${tutdetails.title}/checkout`} >get premium access</Link> </button>
+                            <Link to={`/tutorial/${tutdetails._id}/${tutdetails.title}/checkout`} ><button className="btn btn-outline btn-secondary"> get premium access </button></Link>
                         </div>
                     </div>
                 </div>

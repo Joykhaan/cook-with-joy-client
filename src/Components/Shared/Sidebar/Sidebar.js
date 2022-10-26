@@ -39,15 +39,15 @@ const Sidebar = () => {
 
     return (
         <div>
-            <h2>these are all categories {tutorials.length}</h2>
+            <h2 className='text-orange-500 font-bold text-2xl flex justify-center' >{tutorials.length} Courses available</h2>
             {
-                tutorials.map(tutorial => <p key={tutorial.id}>
-                    <Link to={`/courses/${tutorial.id}`} >{tutorial.name}</Link>
+                tutorials.map(tutorial => <p className='ml-8 mt-2' key={tutorial.id}>
+                    <Link to={`/courses/${tutorial.id}`} className='text-slate-100' >{tutorial.name}</Link>
                 </p> )
             }
             <div className='flex-lg justify-center mt-8'>
-             <button onClick={handleGoogleSignIn} className="btn btn-outline btn-primary mx-4"> <FaGoogle></FaGoogle>  Google</button>
-            <button onClick={handleGitSignIn} className="btn btn-outline btn-primary mx-4"> <FaGithub></FaGithub> Github</button>   
+             <button onClick={handleGoogleSignIn} className="btn  btn-primary mx-6"> <FaGoogle></FaGoogle>  Google</button>
+            <button onClick={handleGitSignIn} className="btn  btn-primary mx-6" > <FaGithub></FaGithub> Github</button>   
             </div>
             
         </div>
