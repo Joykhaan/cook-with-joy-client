@@ -35,6 +35,8 @@ const Sidebar = () => {
         .catch(error =>console.error(error))
     }
 
+    
+
     return (
         <div>
             <h2>these are all categories {tutorials.length}</h2>

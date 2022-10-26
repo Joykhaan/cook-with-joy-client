@@ -5,10 +5,10 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const Navbar = () => {
 
-    const {user} = useContext(AuthContext);
-
-    const [isHovering, setIsHovering] = useState(false);
-
+    const {user,logOut} = useContext(AuthContext);
+    console.log('user   found',user?.email)
+    const [isHovering, setIsHovering] = useState();
+    console.log(isHovering)
     const handleMouseOver = () => {
         setIsHovering(true);
       };
@@ -16,6 +16,12 @@ const Navbar = () => {
       const handleMouseOut = () => {
         setIsHovering(false);
       };
+
+      const handleLogOut=()=>{
+        logOut()
+        .then(()=>{})
+        .catch(error=>console.error(error))
+    }
 
     return (
         <div>
@@ -28,7 +34,7 @@ const Navbar = () => {
                     <Link to='/'>Courses</Link>
                     <Link to='/blog'>Blog</Link>
                     <Link to='/faq'>FAQ</Link>
-                    {isHovering && <span>{user?.displayName}</span>}
+                    {isHovering && <span>{user?.email}</span>}
                 </div>
                 <div className="flex-none">
                     <div className="dropdown dropdown-end">
@@ -43,12 +49,13 @@ const Navbar = () => {
                             
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                            <li>
+                            
                                 
-                                <Link to='/courses' className="justify-between">profile</Link>
-                            </li>
-                            <li><Link to='/blog' className="justify-between">profile</Link></li>
-                            <li><Link to='/faq' className="justify-between">profile</Link></li>
+                            <li><Link to='/login' className="justify-between">Login</Link></li>
+                            
+                            <li><Link to='/register' className="justify-between">Register</Link></li>
+                              <li>  <Link onClick={handleLogOut}  className="justify-between">Logout</Link></li>
+                              <li><Link to='/register' className="justify-between">{user?.email}</Link></li>
                         </ul>
                     </div>
                 </div>

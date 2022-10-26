@@ -2,9 +2,13 @@ import { createBrowserRouter } from "react-router-dom";
 import Tutorials from "../../Components/Shared/Tutorials/Tutorials";
 import Main from "../../Layout/Main/Main";
 import Blog from "../../Pages/Blog/Blog";
+import Checkout from "../../Pages/Checkout/Checkout";
 import Courses from "../../Pages/Courses/Courses";
 import Faq from "../../Pages/Faq/Faq";
+import Login from "../../Pages/Login/Login";
+import Register from "../../Pages/Register/Register";
 import TutorialDetails from "../../Pages/TutorialDetails/TutorialDetails";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const route= createBrowserRouter([
     {
@@ -35,11 +39,22 @@ export const route= createBrowserRouter([
                 loader:({params}) => fetch(`http://localhost:5000/tutorial/${params.id}`)
             },
             {
-                path:'courses/1/tutorial/:id',
+                path:'courses/:id/tutorial/:id',
                 element: <TutorialDetails></TutorialDetails>,
                 loader:({params}) => fetch(`http://localhost:5000/tutorial/${params.id}`)
             },
-            
+            {
+                path:'login',
+                element:<Login></Login>
+            },
+            {
+                path:'register',
+                element:<Register></Register>
+            },
+            {
+                path:'/tutorial/:id/:title/checkout',
+                element:<PrivateRoute><Checkout></Checkout></PrivateRoute>
+            }
         ]
     },
     {
