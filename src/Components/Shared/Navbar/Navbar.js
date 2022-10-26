@@ -8,7 +8,6 @@ const Navbar = () => {
     const {user,logOut} = useContext(AuthContext);
     console.log('user   found',user?.email)
     const [isHovering, setIsHovering] = useState();
-    console.log(isHovering)
     const handleMouseOver = () => {
         setIsHovering(true);
       };
@@ -27,14 +26,14 @@ const Navbar = () => {
         <div>
             <div className="navbar bg-red-500 py-6">
                 <div className="flex-1">
-                <Link  className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+                <Link to={'/'} className="btn btn-ghost normal-case text-xl">Learn with Joy</Link>
 
                 </div>
                 <div>
-                    <Link to='/'>Courses</Link>
+                    <Link to='/' className=''>Courses</Link>
                     <Link to='/blog'>Blog</Link>
                     <Link to='/faq'>FAQ</Link>
-                    {isHovering && <span>{user?.email}</span>}
+                    {isHovering && <span className='text-lg text-white font-bold'>{user?.displayName}</span>}
                 </div>
                 <div className="flex-none">
                     <div className="dropdown dropdown-end">
@@ -43,7 +42,7 @@ const Navbar = () => {
                             {
                                 user?.photoURL?<div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className="w-10 rounded-full">
                                 <img src={user?.photoURL} alt='' />
-                            </div>: <FaUser></FaUser>
+                            </div>: <FaUser className='text-white-600'></FaUser>
                             }
                             
                             

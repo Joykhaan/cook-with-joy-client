@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Login = () => {
@@ -58,14 +58,14 @@ const Login = () => {
           </label>
           <input name='password' type="password" placeholder="password" className="input input-bordered" required/>
           <label className="label">
-            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+            <Link to={'/register'} className="label-text-alt link link-hover text-blue-600/100 text-lg">Register</Link>
           </label>
         </div>
 
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
         </div>
-        <h2>{error}</h2>
+        <h2 className='text-lg text-red-600'>{error}</h2>
       </form>
     </div>
   </div>
