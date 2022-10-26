@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Sidebar = () => {
 
@@ -12,6 +14,26 @@ const Sidebar = () => {
         .then(data => setTutorials(data));
     },[])
 
+    const googleProvider = new GoogleAuthProvider()
+    const gitProvider = new GithubAuthProvider();
+    const {login,gitLogin} = useContext(AuthContext);
+
+    const handleGoogleSignIn=()=>{
+        login(googleProvider)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error =>console.error(error))
+    }
+    const handleGitSignIn=()=>{
+        gitLogin(gitProvider)
+        .then(result =>{
+            const user = result.user;
+            console.log(user)
+        })
+        .catch(error =>console.error(error))
+    }
 
     return (
         <div>
@@ -22,8 +44,8 @@ const Sidebar = () => {
                 </p> )
             }
             <div className='flex-lg justify-center mt-8'>
-             <button className="btn btn-outline btn-primary mx-4"> <FaGoogle></FaGoogle>  Google</button>
-            <button className="btn btn-outline btn-primary mx-4"> <FaGithub></FaGithub> Github</button>   
+             <button onClick={handleGoogleSignIn} className="btn btn-outline btn-primary mx-4"> <FaGoogle></FaGoogle>  Google</button>
+            <button onClick={handleGitSignIn} className="btn btn-outline btn-primary mx-4"> <FaGithub></FaGithub> Github</button>   
             </div>
             
         </div>
