@@ -33,7 +33,13 @@ export const route= createBrowserRouter([
                 path:'tutorial/:id',
                 element: <TutorialDetails></TutorialDetails>,
                 loader:({params}) => fetch(`http://localhost:5000/tutorial/${params.id}`)
-            }
+            },
+            {
+                path:'courses/1/tutorial/:id',
+                element: <TutorialDetails></TutorialDetails>,
+                loader:({params}) => fetch(`http://localhost:5000/tutorial/${params.id}`)
+            },
+            
         ]
     },
     {
