@@ -6,11 +6,11 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Sidebar = () => {
 
-    const [tutorials, setTutorials,toggleTheme]=useState([]);
+    const [tutorials, setTutorials]=useState([]);
 
     //for load data first time
     useEffect(()=>{
-        fetch('http://localhost:5000/recipe-tutorials')
+        fetch('https://cook-with-joy-server.vercel.app/recipe-tutorials')
         .then(res => res.json())
         .then(data => setTutorials(data));
     },[])

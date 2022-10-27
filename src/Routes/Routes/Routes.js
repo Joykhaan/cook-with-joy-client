@@ -18,7 +18,7 @@ export const route= createBrowserRouter([
             {
                 path:'/',
                 element: <Courses></Courses>,
-                loader:() => fetch('http://localhost:5000/tutorial')
+                loader:() => fetch('https://cook-with-joy-server.vercel.app/tutorial')
             },
             {
                 path:'blog',
@@ -27,7 +27,7 @@ export const route= createBrowserRouter([
             {
                 path:'courses/:id',
                 element: <Tutorials></Tutorials>,
-                loader:({params}) => fetch(`http://localhost:5000/sub-tutorial/${params.id}`)
+                loader:({params}) => fetch(`https://cook-with-joy-server.vercel.app/sub-tutorial/${params.id}`)
             },
             {
                 path:'faq',
@@ -36,12 +36,12 @@ export const route= createBrowserRouter([
             {
                 path:'tutorial/:id',
                 element: <TutorialDetails></TutorialDetails>,
-                loader:({params}) => fetch(`http://localhost:5000/tutorial/${params.id}`)
+                loader:({params}) => fetch(`https://cook-with-joy-server.vercel.app/tutorial/${params.id}`)
             },
             {
                 path:'courses/:id/tutorial/:id',
                 element: <TutorialDetails></TutorialDetails>,
-                loader:({params}) => fetch(`http://localhost:5000/tutorial/${params.id}`)
+                loader:({params}) => fetch(`https://cook-with-joy-server.vercel.app/tutorial/${params.id}`)
             },
             {
                 path:'login',
@@ -54,7 +54,7 @@ export const route= createBrowserRouter([
             {
                 path:'/tutorial/:id/:title/checkout',
                 element:<PrivateRoute><Checkout></Checkout></PrivateRoute>,
-                loader:({params}) => fetch(`http://localhost:5000/tutorial/${params.id}`)
+                loader:({params}) => fetch(`https://cook-with-joy-server.vercel.app/tutorial/${params.id}`)
             }
         ]
     },
