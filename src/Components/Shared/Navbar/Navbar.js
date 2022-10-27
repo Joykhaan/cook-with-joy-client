@@ -26,7 +26,11 @@ const Navbar = () => {
         <div>
             <div className="navbar bg-orange-600 py-6">
                 <div className="flex-1">
-                <Link to={'/'} className="btn btn-ghost normal-case text-white font-bold md:text-xl">Learn with Joy</Link>
+                    <Link className='w-8'>
+
+                    <img src="https://cdn.pixabay.com/photo/2016/07/13/13/59/men-chef-1514505_960_720.png" alt="this is logo" />
+                    </Link>
+                <Link to={'/'} className="btn btn-ghost normal-case text-white font-bold md:text-xl">Learn Cooking</Link>
                 
                 </div>
                 <div className='flex justify-center' >
