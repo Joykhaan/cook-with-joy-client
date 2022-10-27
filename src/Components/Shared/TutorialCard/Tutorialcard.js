@@ -8,8 +8,8 @@ const Tutorialcard = ({ tutorial }) => {
     return (
         <div className='flex justify-around mt-6'>
             
-            <div className="card lg:w-80 md:w-64 bg-base-100 shadow-xl">
-                <figure><img src={image} alt="Shoes" /></figure>
+            <div className="card lg:w-80 md:w-64  bg-base-100 shadow-xl">
+                <figure><img className='h-64 w-full md:w-80' src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-orange-500">{title}</h2>
                     
