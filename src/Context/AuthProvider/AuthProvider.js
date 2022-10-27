@@ -49,7 +49,13 @@ const AuthProvider = ({children}) => {
         return updateProfile(auth.currentUser,profile);
     }
 
-    const authInfo = {user,loading,login,gitLogin,logOut,createUser,logIn,setUser,updateUserProfile};
+    // toggle theme
+    const [theme,setTheme]=useState('dark');
+    const toggleTheme = ()=>{
+        setTheme((curr)=>(curr==='light'?'dark':'light'))
+    }
+
+    const authInfo = {user,loading,login,gitLogin,logOut,createUser,logIn,setUser,updateUserProfile,theme,toggleTheme};
 
     return (
         <AuthContext.Provider value={authInfo}>

@@ -1,0 +1,24 @@
+#light{
+  background-color: #f8fafc;  
+}
+#dark{
+   color: #0f172a; 
+}
+.footer{
+    background-color: #ea580c;
+}
+#light #sidetxt{
+    color: #0f172a;
+}
+#light #logreg{
+    background-color: #f97316;
+}
+#dark #logreg{
+    background-color: #0f172a;
+}
+#light #logreg span{
+    color: #f8fafc;
+}
+#dark #logreg span{
+    color: #f8fafc;
+}

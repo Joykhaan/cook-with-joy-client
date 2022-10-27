@@ -6,7 +6,7 @@ const Courses = () => {
     const tutorials = useLoaderData()
     return (
         <div>
-            <h1>this is courses page: {tutorials.length}</h1>
+            
             <Tutorials></Tutorials>
         </div>
     );

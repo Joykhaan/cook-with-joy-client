@@ -10,9 +10,9 @@ const TutorialDetails = () => {
 
     return (
         <>
-            <h2>Eroll our special courses for more info click here
-                <Pdf targetRef={ref} filename="cook-tutorial.pdf">
-                    {({ toPdf }) => <button onClick={toPdf}><FaCloudDownloadAlt ></FaCloudDownloadAlt></button>}
+            <h2 className='flex justify-center text-3xl text-orange-500 mb-6'>Eroll our special courses || for more info click here
+                 <Pdf targetRef={ref} filename="cook-tutorial.pdf" >
+                    {({ toPdf }) => <button onClick={toPdf}><FaCloudDownloadAlt className="ml-4 mt-2"></FaCloudDownloadAlt></button>}
                 </Pdf>  </h2>
             <div className='flex justify-center' >
 

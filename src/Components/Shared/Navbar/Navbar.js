@@ -5,7 +5,7 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const Navbar = () => {
 
-    const {user,logOut} = useContext(AuthContext);
+    const {user,logOut,theme, toggleTheme} = useContext(AuthContext);
     console.log('user   found',user?.email)
     const [isHovering, setIsHovering] = useState();
     const handleMouseOver = () => {
@@ -30,6 +30,7 @@ const Navbar = () => {
                 
                 </div>
                 <div className='flex justify-center' >
+                    <button onClick={toggleTheme} checked={theme==='dark'} className="btn mr-2 md:mr-8 text-slate-100 hidden md:block">{theme === 'light'?'Light': 'dark'}</button>
                     <Link className='mr-2 md:mr-8 text-slate-100' to='/'>Courses</Link>
                     <Link className='mr-2 md:mr-8 text-slate-100' to='/blog'>Blog</Link>
                     <Link className='mr-2 md:mr-8 text-slate-100' to='/faq'>FAQ</Link>
@@ -56,6 +57,7 @@ const Navbar = () => {
                             
                             <li><Link to='/register' className="justify-between">Register</Link></li>
                               <li>  <Link onClick={handleLogOut}  className="justify-between">Logout</Link></li>
+                              <li>  <Link onClick={toggleTheme} checked={theme==='dark'} className="justify-between text-xl font-bold text-orange-500 md:hidden block">{theme === 'light'?'Light Mode': 'dark Mode'}</Link></li>
                               {/* <li><Link to='/register' className="justify-between">{user?.email}</Link></li> */}
                         </ul>
                     </div>

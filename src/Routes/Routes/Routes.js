@@ -59,7 +59,7 @@ export const route= createBrowserRouter([
     },
     {
         path:'*',
-        element:<Blog></Blog>
+        element: <h1 className="text-6xl">404 this page not found</h1>
     }
 ])
 
