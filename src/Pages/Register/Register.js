@@ -6,7 +6,9 @@ const Register = () => {
 
 
     const {createUser,updateUserProfile,}= useContext(AuthContext);
+
     const[error, setError]= useState('')
+    
     const navigate = useNavigate()
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -18,7 +20,6 @@ const Register = () => {
         const photourl= form.photoUrl.value;
         const email = form.email.value;
         const password = form.password.value
-        console.log(name,photourl,email,password)
 
         createUser(email,password)
         .then(result=>{
@@ -59,14 +60,14 @@ const Register = () => {
 
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-lg">Name</span>
+                                    <span className="label-text text-lg">Full name</span>
                                 </label>
                                 <input name='name' type="text" placeholder="your name" className="input input-bordered" required />
                             </div>
 
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-lg">photoURL</span>
+                                    <span className="label-text text-lg">Photo URL</span>
                                 </label>
                                 <input name='photoUrl' type="text" placeholder="photo url" className="input input-bordered" required />
                             </div>

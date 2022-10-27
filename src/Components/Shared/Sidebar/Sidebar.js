@@ -8,6 +8,7 @@ const Sidebar = () => {
 
     const [tutorials, setTutorials,toggleTheme]=useState([]);
 
+    //for load data first time
     useEffect(()=>{
         fetch('http://localhost:5000/recipe-tutorials')
         .then(res => res.json())
