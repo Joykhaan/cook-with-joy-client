@@ -16,7 +16,7 @@ const TutorialDetails = () => {
                 </Pdf>  </h2>
             <div className='flex justify-center' >
 
-                <div className="card w-1/2 bg-base-100 shadow-xl "  >
+                <div className="card w-full md:w-1/2 bg-base-100 shadow-xl "  >
                     <figure><img src={tutdetails.image} className='w-full h-96' alt="Shoes" /></figure>
                     <div className="card-body"  >
                         <div ref={ref}><h2 className="card-title"> {tutdetails.title} </h2>
