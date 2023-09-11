@@ -5,7 +5,7 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 const Register = () => {
 
 
-    const {createUser,updateUserProfile,}= useContext(AuthContext);
+    const {createUser,updateUserProfile,user}= useContext(AuthContext);
 
     const[error, setError]= useState('')
     
@@ -19,8 +19,30 @@ const Register = () => {
         const name = form.name.value
         const photourl= form.photoUrl.value;
         const email = form.email.value;
-        const password = form.password.value
-
+        const password = form.password.value;
+        const userid=user.uid;
+        const userPhoto=user.photoUrl;
+        const userInfo={
+            name,
+            email,
+            userid,
+            userPhoto,
+        }
+        const url="http://localhost:5000/users"
+    fetch(url,{
+        method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userInfo)
+    })
+    .then(res => res.json())
+            .then(data => {
+                
+                console.log(data)
+                
+            })
+            .catch(error => console.error(error));
         createUser(email,password)
         .then(result=>{
             const user =result.user;
@@ -46,6 +68,7 @@ const Register = () => {
         .then(()=>{})
         .catch(error=>console.error(error))
     }
+    
 
     return (
         <div>

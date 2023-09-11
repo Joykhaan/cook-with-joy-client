@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "cook-with-joy",
+    "cook-with-joy": "cook-with-joy"
+  },
+  "targets": {},
+  "etags": {}
+}
